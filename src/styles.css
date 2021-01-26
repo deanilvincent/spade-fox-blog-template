@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'bulma/css/bulma.min.css';
-@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import "bulma/css/bulma.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 /* bulma extensions */
+
+.content-top-adjust {
+  margin: 25px;
+}
