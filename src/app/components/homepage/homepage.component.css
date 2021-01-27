@@ -1,0 +1,14 @@
+.hero-container {
+    width: 100%;
+}
+.hero-left-content {
+  top: 0px;
+  width: 50%;
+  float: left;
+}
+
+.hero-right-content {
+  width: 50%;
+  float: right;
+  height: 0;
+}
