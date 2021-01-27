@@ -1,17 +1,34 @@
 <div class="container">
   <div class="card">
     <div class="card-content">
-      <form [formGroup]="emailSendingForm">
+      <form [formGroup]="emailSendingForm" (ngSubmit)="onSubmit()">
         <h1 class="title">Contact me</h1>
         <div class="field">
           <label class="label">Subject</label>
           <div class="control">
-            <input [ngClass]="isValidFormField('subject') ? 'input is-danger' : 'input'" type="text" placeholder="Enter subject" formControlName="subject" />
+            <input
+              [ngClass]="
+                isValidFormField('subject') ? 'input is-danger' : 'input'
+              "
+              type="text"
+              placeholder="Enter subject"
+              formControlName="subject"
+            />
+            <!-- 
+              if global: <p class="help is-danger" *ngIf="submitted && f.subject.errors">
+              Subject has error.
+            </p> -->
             <p
               class="help is-danger"
-              *ngIf="isValidFormField('subject')"
+              *ngIf="isValidFormField('subject') && f.subject.errors?.required"
             >
               Subject is required.
+            </p>
+            <p
+              class="help is-danger"
+              *ngIf="isValidFormField('subject') && f.subject.errors?.pattern"
+            >
+              Subject doesn't allow whitespace.
             </p>
           </div>
         </div>
@@ -20,54 +37,91 @@
           <label class="label">Name</label>
           <div class="control has-icons-left has-icons-right">
             <input
-              class="input is-success"
+              [ngClass]="isValidFormField('name') ? 'input is-danger' : 'input'"
               type="text"
               placeholder="Enter your name"
-              value=""
               formControlName="name"
             />
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
+            <p
+              class="help is-danger"
+              *ngIf="isValidFormField('name') && f.name.errors?.required"
+            >
+              Name is required.
+            </p>
+            <p
+              class="help is-danger"
+              *ngIf="isValidFormField('name') && f.name.errors?.pattern"
+            >
+              Name doesn't allow whitespace.
+            </p>
           </div>
-          <!-- <p class="help is-success">This username is available</p> -->
         </div>
 
         <div class="field">
           <label class="label">Email</label>
           <div class="control has-icons-left has-icons-right">
             <input
-              class="input is-danger"
+              [ngClass]="
+                isValidFormField('email') ? 'input is-danger' : 'input'
+              "
               type="email"
               placeholder="Email input"
-              value="hello@"
+              formControlName="email"
             />
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-exclamation-triangle"></i>
-            </span>
           </div>
-          <p class="help is-danger">This email is invalid</p>
+          <p
+            class="help is-danger"
+            *ngIf="isValidFormField('email') && f.email.errors?.required"
+          >
+            Email is required.
+          </p>
+          <p
+            class="help is-danger"
+            *ngIf="isValidFormField('email') && f.email.errors?.email"
+          >
+            Email is invalid.
+          </p>
         </div>
 
         <div class="field">
           <label class="label">Message</label>
           <div class="control">
             <textarea
+              [ngClass]="
+                isValidFormField('message') ? 'textarea is-danger' : 'textarea'
+              "
               class="textarea"
               placeholder="How may I help you?"
+              formControlName="message"
             ></textarea>
+            <p
+              class="help is-danger"
+              *ngIf="isValidFormField('message') && f.message.errors?.required"
+            >
+              Message is required.
+            </p>
+            <p
+              class="help is-danger"
+              *ngIf="isValidFormField('message') && f.message.errors?.pattern"
+            >
+              Message doesn't allow whitespace.
+            </p>
           </div>
         </div>
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link" [disabled]="!emailSendingForm.valid">
+            <button
+              class="button is-link"
+              [disabled]="!emailSendingForm.valid"
+              (ngClick)="onSubmit()"
+            >
               Submit
             </button>
           </div>

@@ -8,6 +8,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TilesComponent } from './components/homepage/tiles/tiles.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ContactFormComponent,
     HomepageComponent,
+    TilesComponent,
     FooterComponent
   ],
   imports: [
