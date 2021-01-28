@@ -4,5 +4,9 @@
 /* bulma extensions */
 
 .content-top-adjust {
-  margin: 25px;
+  margin-top: 25px;
+}
+
+.main-page-content-top-adjust {
+  margin-top: 45px;
 }

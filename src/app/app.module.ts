@@ -9,22 +9,28 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TilesComponent } from './components/homepage/tiles/tiles.component';
-
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+import { cookieConfig } from './app-cookie-config';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ContactFormComponent,
     HomepageComponent,
+    PrivacyPolicyComponent,
+    ContactMeComponent,
     TilesComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgcCookieConsentModule.forRoot(cookieConfig),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
