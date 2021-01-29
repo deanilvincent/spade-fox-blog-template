@@ -23,13 +23,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies": [
+              "highlight.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/cookieconsent/build/cookieconsent.min.css"
+              "./node_modules/cookieconsent/build/cookieconsent.min.css",
+              "./node_modules/highlight.js/styles/atom-one-dark.css"
             ],
             "scripts": [
               "./node_modules/cookieconsent/build/cookieconsent.min.js"
