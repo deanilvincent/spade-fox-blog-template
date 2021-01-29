@@ -2,6 +2,12 @@
 @import "bulma/css/bulma.min.css";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+.container-side-adjust {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .content-top-adjust {
   margin-top: 25px;
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { BlogPost } from 'src/app/models/blogpost.model';
 import { PostHeader } from 'src/app/models/postheader.model';
+import { ExtractStaticPostsDataService } from 'src/app/services/extract-static-posts-data.service';
 
 @Component({
   selector: 'app-how-to-train-your-dragon',
@@ -7,11 +10,14 @@ import { PostHeader } from 'src/app/models/postheader.model';
   styleUrls: ['./how-to-train-your-dragon.component.css'],
 })
 export class HowToTrainYourDragonComponent implements OnInit {
-  postHeader: PostHeader = {
-    title: 'How to train your dragon?',
-    subtitle: 'In this blog, we are going to train or tame a dragon inspired from the movie.',
-    date: 'April 3, 2020',
+  postHeader: BlogPost = {
+    title: '',
+    subtitle: '',
+    date: '',
     tag: '',
+    route: '',
+    id: 0,
+    metaTag: ''
   };
 
   code = `<!DOCTYPE html>
@@ -21,7 +27,26 @@ export class HowToTrainYourDragonComponent implements OnInit {
   </body>
 </html>`;
 
-  constructor() {}
+  constructor(
+    private extractStaticPostsService: ExtractStaticPostsDataService,
+    private titleService: Title,
+    private metaTagService: Meta
+  ) {
+    this.getBlogPostHeaderData()
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.titleService.setTitle(this.postHeader.title);
+    this.metaTagService.updateTag({ name: 'description', content: this.postHeader.metaTag ?? "" });
+  }
+
+  getBlogPostHeaderData() {
+    const data = this.extractStaticPostsService.getPostDataById(1);
+    if (data) {
+      this.postHeader.title = data.title;
+      this.postHeader.subtitle = data.subtitle;
+      this.postHeader.route = data.route;
+      this.postHeader.date = data.date;
+    }
+  }
 }

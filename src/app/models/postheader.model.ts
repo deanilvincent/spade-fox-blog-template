@@ -3,4 +3,5 @@ export interface PostHeader {
   subtitle: string;
   date: any;
   tag: string;
+  route: string;
 }
