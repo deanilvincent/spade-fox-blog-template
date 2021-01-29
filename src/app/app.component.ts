@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // subscribe to cookieconsent observables to react to main events
     this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
+      console.log('SHOW Message')
       // you can use this.ccService.getConfig() to do stuff...
     });
 

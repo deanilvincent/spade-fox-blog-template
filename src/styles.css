@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bulma/css/bulma.min.css";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
-/* bulma extensions */
 
 .content-top-adjust {
   margin-top: 25px;
@@ -9,4 +8,29 @@
 
 .main-page-content-top-adjust {
   margin-top: 45px;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.post-content-container {
+  margin-top: 10px;
+}
+
+.post-content-text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.post-content-text .title-step {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.post-content-text p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

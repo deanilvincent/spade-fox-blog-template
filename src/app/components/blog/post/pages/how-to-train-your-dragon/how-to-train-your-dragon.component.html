@@ -1,0 +1,27 @@
+<div class="container is-max-desktop">
+  <app-post-header
+    [title]="postHeader.title"
+    [subtitle]="postHeader.subtitle"
+    [date]="postHeader.date"
+    [tag]="postHeader.tag"
+  ></app-post-header>
+  <img
+    src="../../../../../../assets/post-asset1.jpg"
+    width="200px"
+    class="img-responsive"
+  />
+  <div class="post-content-container">
+    <div class="post-content-text">
+      <div class="title-step">Step 1</div>
+      <p>Lorem ipsum dolor sit amet, <code>consectetur adipiscing elit.</code> Maecenas nec quam lectus. Duis quis odio ac mauris suscipit ornare. Sed tristique maximus lorem ut consequat. Duis dictum pretium dui sit amet ultrices. Etiam ultricies vel enim nec porta. Quisque pretium lacinia ex mattis rutrum. Vestibulum a massa in mi elementum elementum sed vitae lacus. Vestibulum ultrices massa tellus, vel laoreet mi molestie id. Vivamus id vestibulum libero. Phasellus malesuada, nulla at facilisis sagittis, mauris nunc pharetra ex, sit amet commodo massa massa vitae sem. Curabitur sit amet orci sed metus congue pharetra a blandit quam. In lacinia ipsum non lorem consequat dapibus. Ut ultrices leo dui, pretium imperdiet nibh venenatis vel. Etiam iaculis arcu eu ornare eleifend. Donec vitae erat eu massa sagittis placerat a vel arcu..</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <div class="title-step">Step 2</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec quam lectus. Duis quis odio ac mauris suscipit ornare. Sed tristique maximus lorem ut consequat. Duis dictum pretium dui sit amet ultrices. Etiam ultricies vel enim nec porta. Quisque pretium lacinia ex mattis rutrum. Vestibulum a massa in mi elementum elementum sed vitae lacus. Vestibulum ultrices massa tellus, vel laoreet mi molestie id. Vivamus id vestibulum libero. Phasellus malesuada, nulla at facilisis sagittis, mauris nunc pharetra ex, sit amet commodo massa massa vitae sem. Curabitur sit amet orci sed metus congue pharetra a blandit quam. In lacinia ipsum non lorem consequat dapibus. Ut ultrices leo dui, pretium imperdiet nibh venenatis vel. Etiam iaculis arcu eu ornare eleifend. Donec vitae erat eu massa sagittis placerat a vel arcu..</p>
+    </div>
+    <pre>
+      <code [highlight]="code"></code>
+    </pre>
+    <br />
+    <app-post-footer></app-post-footer>
+  </div>
+</div>
