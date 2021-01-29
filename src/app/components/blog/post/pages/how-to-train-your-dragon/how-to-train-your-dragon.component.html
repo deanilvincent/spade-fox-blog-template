@@ -1,4 +1,4 @@
-<div class="container is-max-desktop">
+<div class="container is-max-desktop container-side-adjust">
   <app-post-header
     [title]="postHeader.title"
     [subtitle]="postHeader.subtitle"
@@ -23,5 +23,7 @@
     </pre>
     <br />
     <app-post-footer></app-post-footer>
+    <disqus [identifier]="'/' + postHeader.route">
+    </disqus>
   </div>
 </div>

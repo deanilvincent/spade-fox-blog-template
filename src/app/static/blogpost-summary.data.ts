@@ -1,4 +1,6 @@
-export const blogPostsData = [
+import { BlogPost } from "../models/blogpost.model";
+
+export const blogPostsData: BlogPost[] = [
   {
     title: 'How to train your dragon?',
     subtitle: 'In this blog, we are going to train or tame a dragon inspired from the movie.',

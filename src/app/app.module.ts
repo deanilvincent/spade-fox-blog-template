@@ -8,6 +8,7 @@ import { NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { cookieConfig } from './app-cookie-config';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { declarations } from './app-declarations';
+import { DisqusModule } from 'ngx-disqus';
 
 @NgModule({
   declarations: declarations,
@@ -17,6 +18,7 @@ import { declarations } from './app-declarations';
     ReactiveFormsModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
     HighlightModule,
+    DisqusModule.forRoot('disqus_shortname')
   ],
   providers: [
     {
