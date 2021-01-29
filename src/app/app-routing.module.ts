@@ -5,6 +5,9 @@ import { HowToTrainYourDragonComponent } from './components/blog/post/pages/how-
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { ExtractStaticPostsDataService } from './services/extract-static-posts-data.service'
+
+const staticPostDataService = new ExtractStaticPostsDataService()
 
 const routes: Routes = [
   {
@@ -16,16 +19,17 @@ const routes: Routes = [
     component: BlogComponent,
   },
   {
-    path: 'blog/posts/how-to-train-your-dragon',
-    component: HowToTrainYourDragonComponent,
-  },
-  {
     path: 'privacy-policy',
     component: PrivacyPolicyComponent,
   },
   {
     path: 'contact-me',
     component: ContactMeComponent,
+  },
+  // posts
+  {
+    path: staticPostDataService.getRouteById(1),
+    component: HowToTrainYourDragonComponent,
   },
 ];
 
